@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caihua.mapper.EmpMapper">
+    <select id="findEmp" resultMap="baseMap" parameterType="int">
+      select * from emp e,dept d,pos p where e.eid=#{eid} and d.did=e.did and e.pid=p.pid
+  </select>
+
+    <resultMap id="baseMap" type="Employee">
+        <id property="eid" column="eid"/>
+        <result property="ename" column="ename"/>
+        <result property="eage" column="eage"/>
+        <result property="egender" column="egender"/>
+        <association property="dept" javaType="Dept">
+            <id property="did" column="did"/>
+            <result property="brachCode" column="brach_code"/>
+            <result property="dname" column="dname"/>
+            <result property="addr" column="addr"/>
+        </association>
+        <association property="position" javaType="Position">
+            <id property="pid" column="pid"/>
+            <result property="pname" column="pname"/>
+            <result property="plevel" column="plevel"/>
+        </association>
+    </resultMap>
+</mapper>
