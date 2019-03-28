@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AddAspect {
     @Pointcut("execution(* com.caihua.service.impl.*.add*(..))")
-    public void addLog(){};
+    public void addLog(){}
 
     @Before(value = "addLog()")
     public void before(JoinPoint joinPoint){

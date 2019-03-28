@@ -108,7 +108,7 @@
 		s:"请{填写|选择}{0|信息}！",
 		v:"所填信息没有经过验证，请稍后…",
 		p:"正在提交数据…"
-	}
+	};
 	$.Tipmsg=tipmsg;
 	
 	var Validform=function(forms,settings,inited){
@@ -181,7 +181,7 @@
 		if( settings.tiptype==1 || (settings.tiptype==2 || settings.tiptype==3) && settings.ajaxPost ){		
 			creatMsgbox();
 		}
-	}
+	};
 	
 	Validform.defaults={
 		tiptype:1,
@@ -189,7 +189,7 @@
 		showAllError:false,
 		postonce:false,
 		ajaxPost:false
-	}
+	};
 	
 	Validform.util={
 		dataType:{
@@ -222,7 +222,7 @@
 				inputval="";
 				curform.find(":checkbox[name='"+obj.attr("name")+"']:checked").each(function(){ 
 					inputval +=$(this).val()+','; 
-				})
+				});
 				inputval= inputval===undef ? "" : inputval;
 			}else{
 				inputval=obj.val();
@@ -248,7 +248,7 @@
 						$(this).parent().next().find(".Validform_checktip").remove();
 					}
 				}
-			})
+			});
 			
 			//表单元素值比较时的信息提示增强;
 			curform.find("input[recheck]").each(function(){
@@ -401,8 +401,10 @@
 			
 			//jqtransform;
 			if(addRule!="addRule" && plugin.jqtransform && $.fn.jqTransSelect){
-				if(curform[0].jqTransSelected=="true"){return;};
-				curform[0].jqTransSelected="true";
+                if (curform[0].jqTransSelected == "true") {
+                    return;
+                }
+                curform[0].jqTransSelected="true";
 				
 				var jqTransformHideSelect = function(oTarget){
 					var ulVisible = $('.jqTransformSelectWrapper ul:visible');
@@ -849,7 +851,7 @@
 						//localconfig.error返回true表示还需要执行temp_err;
 						return true;
 					}
-				}
+				};
 				
 				if(ajaxsetup.success){
 					var temp_suc=ajaxsetup.success;
@@ -1043,7 +1045,7 @@
 							curform[0].validform_status="normal";
 							curform[0].validform_ajax=null;
 						}
-					}
+					};
 					
 					ajaxsetup=$.extend({},localconfig,ajaxsetup,{dataType:"json"});
 					
@@ -1090,7 +1092,7 @@
 			}
 		}
 		
-	}
+	};
 	
 	$.Datatype=Validform.util.dataType;
 	
@@ -1139,7 +1141,7 @@
 		
 		ignore:function(selector){
 			var obj=this;
-			var selector=selector || "[datatype]"
+			var selector=selector || "[datatype]";
 			
 			$(obj.forms).find(selector).each(function(){
 				$(this).data("dataIgnore","dataIgnore").removeClass("Validform_error");
@@ -1150,7 +1152,7 @@
 		
 		unignore:function(selector){
 			var obj=this;
-			var selector=selector || "[datatype]"
+			var selector=selector || "[datatype]";
 			
 			$(obj.forms).find(selector).each(function(){
 				$(this).removeData("dataIgnore");
@@ -1281,7 +1283,7 @@
 			
 			return this;
 		}
-	}
+	};
 
 	$.fn.Validform=function(settings){
 		return new Validform(this,settings);
@@ -1315,9 +1317,8 @@
 		$(window).bind("scroll resize",function(){
 			!msghidden && setCenter(msgobj,400);
 		});
-	};
-	
-	//公用方法显示&关闭信息提示框;
+    }
+    //公用方法显示&关闭信息提示框;
 	$.Showmsg=function(msg){
 		creatMsgbox();
 		Validform.util.showmsg.call(win,msg,1,{});

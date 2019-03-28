@@ -2,17 +2,19 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.caihua.bean
 server:
-  port: 8080
+  port: 8989
 spring:
   mvc:
     view:
       prefix: /WEB-INF/
       suffix: .jsp
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql:///boot?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
-    username: root
-    password:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@//127.0.0.1:1521/XE
+    username: system
+    password: hua1996cai
+
+
 
 
 

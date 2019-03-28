@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DeptMapper {
-   public Dept findDeptById(int did);
+   Dept findDeptById(int did);
 
-   public Dept findDeptByName(String dname);
+   Dept findDeptByName(String dname);
 }

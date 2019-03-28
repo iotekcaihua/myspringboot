@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.caihua.mapper.EmpMapper">
     <select id="findEmp" resultMap="baseMap" parameterType="int">
-      select * from emp e,dept d,pos p where e.eid=#{eid} and d.did=e.did and e.pid=p.pid
+      select * from "emp" e,"dept" d,"pos" p where e."eid"=#{eid} and d."did"=e."did" and e."pid"=p."pid"
   </select>
 
     <resultMap id="baseMap" type="Employee">

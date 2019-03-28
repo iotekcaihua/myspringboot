@@ -9,6 +9,7 @@ import java.io.IOException;
 //@WebFilter(filterName = "CacheFilter",urlPatterns = "*.jsp")
 public class CacheFilter implements Filter {
     public void destroy() {
+        System.out.println("缓存过滤器销毁");
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
@@ -20,8 +21,8 @@ public class CacheFilter implements Filter {
         chain.doFilter(request, response);
     }
 
-    public void init(FilterConfig config) throws ServletException {
-
+    public void init(FilterConfig config) {
+        System.out.println("缓存过滤器实例化");
     }
 
 }

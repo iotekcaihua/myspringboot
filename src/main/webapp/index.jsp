@@ -18,14 +18,14 @@
             background: yellow;
         }
     </style>
-    <script src="/js/jquery-1.7.2.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js"></script>
     <script>
         $(function () {
-            setInterval(x, 5000)
+            setInterval(x, 5000);
 
             function x() {
                 $.ajax({
-                        url: "/login/getConnCount",
+                        url: "${pageContext.request.contextPath}/login/getConnCount",
                         type: "get",
                         dataType: "JSON",
                         success: function (a) {
@@ -40,12 +40,12 @@
 <body>
 <span class="conn">在线人数：<label
         id="conn">${pageContext.request.session.servletContext.getAttribute("conn")}</label>人</span>
-<form action="/dept/findDeptByName">
+<form action="${pageContext.request.contextPath}/dept/findDeptByName">
     部门名称： <input name="dname" type="text">
     <p/>
     <input type="submit" value="查询">
 </form>
-<form action="/emp/findEmp">
+<form action="${pageContext.request.contextPath}/emp/findEmp">
     员工号： <input name="eid" type="number">
     <p/>
     <input type="submit" value="查询">

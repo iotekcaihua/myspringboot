@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Tt {
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) {
         Endpoint.publish("http://192.168.43.214:80/findEmp",new EmpServiceImpl());
         System.out.println("发布成功！");
     }

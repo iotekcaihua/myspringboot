@@ -6,5 +6,5 @@ import javax.jws.WebService;
 
 @WebService
 public interface EmpService {
-    public Employee findEmp(int eid);
+    Employee findEmp(int eid);
 }

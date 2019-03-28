@@ -10,10 +10,9 @@
 <html>
 <head>
     <title>Title</title>
-   <%-- <base href="${pageContext.request.contextPath}/WEB-INFO">--%>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
     <script>
         $(function () {
             /*添加模块*/
@@ -24,7 +23,7 @@
                 $("#myModalLabelt").text("部门信息");
                 $('#myModalt').modal();
                 return false;
-            })
+            });
             $("#lookPosition").click(function () {
                 $("#pname").val("${employee.position.pname}");
                 $("#plevel").val("${employee.position.plevel}");

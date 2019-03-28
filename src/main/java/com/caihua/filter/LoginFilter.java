@@ -9,6 +9,7 @@ import java.io.IOException;
 //@WebFilter(filterName = "LoginFilter", urlPatterns = "/*")
 public class LoginFilter implements Filter {
     public void destroy() {
+        System.out.println("登陆过滤器销毁");
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
@@ -29,8 +30,8 @@ public class LoginFilter implements Filter {
         }
     }
 
-    public void init(FilterConfig config) throws ServletException {
-
+    public void init(FilterConfig config) {
+        System.out.println("登陆过滤器实例化");
     }
 
 }

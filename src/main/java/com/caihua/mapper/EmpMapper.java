@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmpMapper {
-     public Employee findEmp(int eid);
+     Employee findEmp(int eid);
 }

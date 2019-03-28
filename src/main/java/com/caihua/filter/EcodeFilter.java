@@ -9,6 +9,7 @@ import java.io.IOException;
 @WebFilter(filterName = "EcodeFilter",urlPatterns = "/*")
 public class EcodeFilter implements Filter {
     public void destroy() {
+        System.out.println("编码过滤器销毁");
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
@@ -17,8 +18,8 @@ public class EcodeFilter implements Filter {
         chain.doFilter(req, resp);
     }
 
-    public void init(FilterConfig config) throws ServletException {
-
+    public void init(FilterConfig config) {
+        System.out.println("编码过滤器实例化");
     }
 
 }
