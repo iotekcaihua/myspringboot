@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Slf4j
+@Aspect
 @Component
 public class AddAspect {
     @Pointcut("execution(* com.caihua.service.impl.*.add*(..))")

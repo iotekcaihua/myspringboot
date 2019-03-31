@@ -1,6 +1,7 @@
 package com.caihua.bean;
 
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
@@ -12,8 +13,6 @@ public class User {
     private int id;
     private String name;
     private int age;
-    //@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date birth;
 
     private SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

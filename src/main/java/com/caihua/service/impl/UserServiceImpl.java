@@ -12,6 +12,11 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
+    public User findUser(int id) {
+        return userMapper.findUser(id);
+    }
+
+    @Override
     public void addUser(User user) {
         userMapper.addUser(user);
     }

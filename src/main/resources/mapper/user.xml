@@ -4,4 +4,8 @@
    <insert id="addUser" parameterType="User">
        insert into USERS (ID,NAME,AGE,BIRTH) values (USER_ID.nextval,#{name},#{age},to_date(#{birth},'yyyy-mm-dd hh24:mi:ss'))
    </insert>
+
+    <select id="findUser" parameterType="int" resultType="User">
+        select * from USERS where ID=#{id}
+    </select>
 </mapper>

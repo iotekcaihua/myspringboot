@@ -3,6 +3,9 @@ mybatis:
   type-aliases-package: com.caihua.bean
 server:
   port: 8989
+  servlet:
+    session:
+      timeout: 1m
 spring:
   mvc:
     view:
@@ -13,6 +16,7 @@ spring:
     url: jdbc:oracle:thin:@//127.0.0.1:1521/XE
     username: system
     password: hua1996cai
+
 
 
 

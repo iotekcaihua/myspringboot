@@ -1,4 +1,4 @@
-package com.caihua.config;
+package com.caihua.util;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -49,7 +49,7 @@ public class MyConverter implements Converter<String,Date> {
             DateFormat dateFormat = new SimpleDateFormat(format);
             date = dateFormat.parse(dateStr);
         } catch (Exception e) {
-
+             e.printStackTrace();
         }
         return date;
     }

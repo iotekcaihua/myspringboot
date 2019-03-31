@@ -1,16 +1,14 @@
 package com.caihua.config;
 
 import com.caihua.intecptor.LoginIntecptor;
+import com.caihua.util.MyConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
-import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.util.List;
-
 @Configuration
-public class intecptorconfig implements WebMvcConfigurer {
+public class Config implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

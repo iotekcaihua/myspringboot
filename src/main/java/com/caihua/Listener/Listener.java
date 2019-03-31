@@ -19,13 +19,13 @@ public class Listener implements HttpSessionListener{
 
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        se.getSession().setMaxInactiveInterval(600);
         conn++;
         se.getSession().getServletContext().setAttribute("conn",conn);
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
+        System.out.println(se.getSession()+"已销毁");
         conn--;
         se.getSession().getServletContext().setAttribute("conn",conn);
     }

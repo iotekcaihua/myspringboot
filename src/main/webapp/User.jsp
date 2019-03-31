@@ -11,11 +11,18 @@
     <title>Title</title>
 </head>
 <body>
-    <form type="post" action="${pageContext.request.contextPath}/user/addUser">
-        <input type="text" maxlength="10" name="name"><p/>
-        <input type="number" min="1" max="100" step="1" name="age"><p/>
-        <input type="date" name="birth"><p/>
-        <input type="submit" value="提交">
-    </form>
+<form type="post" action="${pageContext.request.contextPath}/user/addUser">
+    <input type="text" maxlength="10" name="name">
+    <p/>
+    <input type="number" min="1" max="100" step="1" name="age">
+    <p/>
+    <input type="date" name="birth">
+    <p/>
+    <input type="submit" value="提交">
+</form>
+<form type="post" action="${pageContext.request.contextPath}/user/findUser">
+    请输入要查询的ID： <input type="number" min="0" step="1" name="id">
+    <p/>
+    <input type="submit">
 </body>
 </html>
