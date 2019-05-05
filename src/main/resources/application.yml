@@ -3,9 +3,9 @@ mybatis:
   type-aliases-package: com.caihua.bean
 server:
   port: 8989
-  servlet:
-    session:
-      timeout: 1m
+ # servlet:
+   # session:
+    #  timeout: 1m
 spring:
   mvc:
     view:

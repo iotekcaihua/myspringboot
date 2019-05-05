@@ -1,6 +1,7 @@
 package com.caihua.config;
 
 import com.caihua.intecptor.LoginIntecptor;
+import com.caihua.intecptor.SubmitIntecptor;
 import com.caihua.util.MyConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -12,7 +13,8 @@ public class Config implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginIntecptor()).addPathPatterns("/**");
+        //registry.addInterceptor(new LoginIntecptor()).addPathPatterns("/**");
+        registry.addInterceptor(new SubmitIntecptor()).addPathPatterns("/good/buyGoods");
     }
 
     @Override
